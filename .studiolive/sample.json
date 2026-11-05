@@ -2,7 +2,7 @@
   "$schema": "https://schemas.platform.uno/sample/v1",
   "id": "liveline",
   "displayName": "Liveline",
-  "description": "Liveline is a real-time line chart control for Uno Platform, drawn with SkiaSharp on an SKCanvasElement. The sample shows one chart on a live feed: a short loading state, then a volatile random walk with a new value every 150 ms. The line, its gradient fill, the value range and the badge ease toward each new value, a live dot marks the latest value, and the chart stops drawing once the line settles.",
+  "description": "Liveline is a real-time line chart control for Uno Platform, drawn with SkiaSharp on an SKCanvasElement. The sample shows one chart on a live feed: a short loading state, then a volatile random walk with a new value every 150 ms. The line, its gradient fill, the value range and the badge ease toward each new value, a live dot marks the latest value, and the chart stops drawing once the line settles. Its default style binds every colour to the Material palette's roles, so the chart follows Light, Dark and any palette with no wiring.",
   "platforms": [
     "desktop",
     "wasm"
@@ -22,17 +22,20 @@
     ],
     "industry": "Data visualization",
     "goals": [
-      "A custom control drawn with SkiaSharp on SKCanvasElement, configured through dependency properties",
+      "A templated control drawn with SkiaSharp on SKCanvasElement, configured through dependency properties",
+      "A default style that binds every colour to a theme palette role, so the chart follows Light, Dark and any palette",
       "Frame-driven animation on CompositionTarget.Rendering that detaches once the line settles",
       "Smooth interpolation of the line, the value range and the badge toward each new value",
-      "A palette derived from one colour, a loading state and a live dot at the latest value"
+      "Uno.Themes tokens for corners and spacing, and utu:Responsive for the phone and desktop layouts"
     ],
     "tags": [
       "skia",
       "custom-control",
       "animation",
       "charts",
-      "real-time"
+      "real-time",
+      "material",
+      "theming"
     ]
   }
 }

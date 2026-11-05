@@ -2,7 +2,7 @@
   "messages": [
     {
       "role": "user",
-      "content": "Build a real-time line chart control for Uno Platform and a page that shows it on a live feed:\n- the chart is drawn with SkiaSharp and fills its container;\n- a smooth line with a gradient fill under it, a grid with value and time labels, and a badge with the latest value at the line's end;\n- the line, the value range and the badge ease toward each new value instead of jumping, and the chart stops redrawing once it settles;\n- a live dot with a soft halo marks the latest value at the line's end;\n- one colour sets the whole palette, in dark or light;\n- a loading state before the first data arrives;\n- the page shows one chart in a rounded card, fed by a volatile random walk with a new value every 150 ms.\n\nStack: Uno Platform single project, SkiaSharp on SKCanvasElement, Material, Toolkit, desktop and WebAssembly."
+      "content": "Build a real-time line chart control for Uno Platform and a page that shows it on a live feed:\n- the chart is drawn with SkiaSharp and fills its container;\n- a smooth line with a gradient fill under it, a grid with value and time labels, and a badge with the latest value at the line's end;\n- the line, the value range and the badge ease toward each new value instead of jumping, and the chart stops redrawing once it settles;\n- a live dot with a soft halo marks the latest value at the line's end;\n- the chart takes its colours from the app's theme and follows light and dark;\n- a loading state before the first data arrives;\n- the page shows one chart in a rounded card, fed by a volatile random walk with a new value every 150 ms.\n\nStack: Uno Platform single project, SkiaSharp on SKCanvasElement, Material, Toolkit, desktop and WebAssembly."
     },
     {
       "role": "assistant",
@@ -10,9 +10,9 @@
     }
   ],
   "suggestedPrompts": [
-    "Add a second chart below this one in a light theme with a blue line",
+    "Add a second chart below this one with the tertiary colour",
     "Add markers on the chart when the value jumps by more than 10",
     "Show a dashed forecast line for the next five seconds",
-    "Pause the feed when I tap the chart and resume on the next tap"
+    "Change the brand seed to blue"
   ]
 }
