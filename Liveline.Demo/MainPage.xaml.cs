@@ -6,7 +6,7 @@ namespace Liveline.Demo;
 
 /// <summary>
 /// One Liveline chart on a live feed: a short loading state, then a volatile random walk with a new value
-/// every 150 ms. The chart lerps toward each value and idles once it settles.
+/// every 150 ms. The chart lerps toward each value and idles once it settles; its colours follow the app theme.
 /// </summary>
 public sealed partial class MainPage : Page
 {
@@ -22,7 +22,6 @@ public sealed partial class MainPage : Page
     {
         this.InitializeComponent();
 
-        Chart.Theme = new LivelineTheme { Color = "#4CAF50", IsDark = true };
         Chart.IsLoading = true;
 
         _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(150) };

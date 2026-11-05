@@ -3,14 +3,18 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:liveline="using:Liveline"
       xmlns:utu="using:Uno.Toolkit.UI"
-      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+      Background="{ThemeResource BackgroundBrush}">
 
-  <!-- The chart alone: it fills a phone's width and stays at most 720 wide, centred, on a desktop. -->
+  <!-- The chart alone: it fills a phone's width and stays at most 720 wide, centred, on a desktop. Its colours come
+       from the theme (see Themes/Generic.xaml), its corner and margin from the Uno.Themes tokens. -->
   <Grid utu:SafeArea.Insets="VisibleBounds">
-    <Border CornerRadius="16"
+    <!-- An outlined card: in Light, Material's Surface and Background are nearly the same, so the outline marks the edge. -->
+    <Border CornerRadius="{StaticResource Radius400CornerRadius}"
+            BorderBrush="{ThemeResource OutlineVariantBrush}"
+            BorderThickness="1"
             MaxWidth="720"
-            Height="360"
-            Margin="16"
+            Height="{utu:Responsive Narrow=280, Normal=360}"
+            Margin="{StaticResource Space400Thickness}"
             VerticalAlignment="Center"
             Translation="0,0,24">
       <Border.Shadow>
@@ -18,11 +22,11 @@
       </Border.Shadow>
 
       <liveline:LivelineChart x:Name="Chart"
-                               ShowGrid="True"
-                               ShowBadge="True"
-                               ShowFill="True"
-                               Momentum="True"
-                               LerpSpeed="0.04" />
+                              ShowGrid="True"
+                              ShowBadge="True"
+                              ShowFill="True"
+                              Momentum="True"
+                              LerpSpeed="0.04" />
     </Border>
   </Grid>
 </Page>
