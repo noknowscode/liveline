@@ -1,0 +1,28 @@
+<Page x:Class="Liveline.Demo.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:liveline="using:Liveline"
+      xmlns:utu="using:Uno.Toolkit.UI"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+  <!-- The chart alone: it fills a phone's width and stays at most 720 wide, centred, on a desktop. -->
+  <Grid utu:SafeArea.Insets="VisibleBounds">
+    <Border CornerRadius="16"
+            MaxWidth="720"
+            Height="360"
+            Margin="16"
+            VerticalAlignment="Center"
+            Translation="0,0,24">
+      <Border.Shadow>
+        <ThemeShadow />
+      </Border.Shadow>
+
+      <liveline:LivelineChart x:Name="Chart"
+                               ShowGrid="True"
+                               ShowBadge="True"
+                               ShowFill="True"
+                               Momentum="True"
+                               LerpSpeed="0.04" />
+    </Border>
+  </Grid>
+</Page>

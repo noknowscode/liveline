@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="450" height="450" viewBox="0 0 50.369617 49.826836" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <!-- A live line chart: a jagged series, its fill, and the pulsing dot at the latest value -->
+  <path d="M9.5 33.5 L15.5 28.8 L20 31.2 L25.5 22.5 L30.5 26 L36.2 17.4 V38.5 H9.5 Z" fill="#FFFFFF" fill-opacity="0.28" />
+  <path d="M9.5 33.5 L15.5 28.8 L20 31.2 L25.5 22.5 L30.5 26 L36.2 17.4" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="36.2" cy="17.4" r="5.6" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.55" />
+  <circle cx="36.2" cy="17.4" r="2.9" fill="#FFFFFF" />
+</svg>

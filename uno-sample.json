@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.platform.uno/sample/v1",
+  "id": "liveline",
+  "displayName": "Liveline",
+  "description": "Liveline is a real-time line chart control for Uno Platform, drawn with SkiaSharp on an SKCanvasElement. The sample shows one chart on a live feed: a short loading state, then a volatile random walk with a new value every 150 ms. The line, its gradient fill, the value range and the badge ease toward each new value, a live dot marks the latest value, and the chart stops drawing once the line settles.",
+  "platforms": [
+    "desktop",
+    "wasm"
+  ],
+  "sourcePath": "Liveline.Demo/Liveline.Demo.csproj",
+  "userConversation": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Build a real-time line chart control for Uno Platform and a page that shows it on a live feed:\n- the chart is drawn with SkiaSharp and fills its container;\n- a smooth line with a gradient fill under it, a grid with value and time labels, and a badge with the latest value at the line's end;\n- the line, the value range and the badge ease toward each new value instead of jumping, and the chart stops redrawing once it settles;\n- a live dot with a soft halo marks the latest value at the line's end;\n- one colour sets the whole palette, in dark or light;\n- a loading state before the first data arrives;\n- the page shows one chart in a rounded card, fed by a volatile random walk with a new value every 150 ms.\n\nStack: Uno Platform single project, SkiaSharp on SKCanvasElement, Material, Toolkit, desktop and WebAssembly."
+      },
+      {
+        "role": "assistant",
+        "content": "Liveline is built and running: the chart loads for three seconds, then follows a live random walk and settles between updates."
+      }
+    ],
+    "suggestedPrompts": [
+      "Add a second chart below this one in a light theme with a blue line",
+      "Add markers on the chart when the value jumps by more than 10",
+      "Show a dashed forecast line for the next five seconds",
+      "Pause the feed when I tap the chart and resume on the next tap"
+    ]
+  },
+  "agentContext": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "This is Liveline, a real-time animated line chart control for Uno Platform, shown on a live random-walk feed."
+      },
+      {
+        "role": "assistant",
+        "content": "Liveline is one Uno single project, `Liveline.Demo/Liveline.Demo.csproj` (Uno.Sdk from `global.json`, heads net10.0-desktop and net10.0-browserwasm, UnoFeatures Material, Toolkit, Skia, SkiaRenderer). The chart control lives in the project's `Liveline/` folder; the page is the demo.\n\nKey files:\n- `MainPage.xaml`: a single `liveline:LivelineChart` named `Chart` inside a rounded `Border` with a `ThemeShadow`, at most 720 wide and 360 high, centred, inside a Toolkit `SafeArea` grid.\n- `MainPage.xaml.cs`: the feed. It sets `Chart.Theme` (`#4CAF50`, dark) and `IsLoading`, waits 3 s on a `DispatcherTimer`, seeds 60 points, then adds a random-walk value every 150 ms (with an 8% chance of a spike), keeps the last 60 points, and sets `Chart.Data` and `Chart.Value`.\n- `Liveline/LivelineChart.cs`: the public `UserControl`. Dependency properties: `Data`, `Value`, `Theme`, `ShowGrid`, `ShowBadge`, `ShowFill`, `ShowTrackingLine`, `Momentum`, `LerpSpeed`, `IsLoading`, `IsPaused`, `WindowStart`/`WindowEnd`/`NowTime`, `Forecast`/`ForecastOpacity`, brush overrides (`ChartBackground`, `LineBrush`, `FillTopBrush`, `FillBottomBrush`, `GridLineBrush`, `LabelBrush`, `BadgeTextBrush`, `LabelHaloBrush`), `StrokeThickness`, `PlotPadding`, `ValueMin`/`ValueMax`, `Typeface` and `Markers`. Every property change pushes one immutable state to the canvas.\n- `Liveline/LivelineChartCanvas.cs`: an `SKCanvasElement` that draws the frame with the renderers in `Liveline/Rendering/` (grid, line and fill, badge, markers, and the live dot that `Momentum` turns on) over a `RenderContext`.\n- `Liveline/Animation/LerpEngine.cs`: per-frame easing (by `LerpSpeed`) of the line, the value range and the badge toward their targets.\n- `Liveline/Models/`: `LivelinePoint` (time, value), `LivelineTheme` (one colour plus dark or light; `Helpers/ColorHelper.cs` derives the palette), `LivelineMarker`, `MomentumDirection`.\n\nAnimation: the control subscribes to `CompositionTarget.Rendering` while the line is moving and unsubscribes as soon as `TickAnimation()` reports it has settled; the next property change re-attaches. Keep that: a held Rendering subscription makes the compositor draw at display refresh for nothing. Allocate paints and paths outside the per-frame path.\n\nThe page uses code-behind on purpose: the feed is a timer, and there is no navigation, MVUX or MVVM. Data is simulated; nothing leaves the device.\n\nBuild: `dotnet build Liveline.Demo/Liveline.Demo.csproj -f net10.0-desktop`, or `-f net10.0-browserwasm` for WebAssembly. There are no tests.\n\nThe app is built and running. The user may ask me to modify it."
+      }
+    ]
+  }
+}
