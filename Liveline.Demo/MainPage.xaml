@@ -14,7 +14,7 @@
             BorderThickness="1"
             MaxWidth="720"
             Height="{utu:Responsive Narrow=280, Normal=360}"
-            Margin="{StaticResource Space400Thickness}"
+            Margin="{StaticResource Space200Thickness}"
             VerticalAlignment="Center"
             Translation="0,0,24">
       <Border.Shadow>
