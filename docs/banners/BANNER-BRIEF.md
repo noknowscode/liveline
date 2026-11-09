@@ -14,7 +14,8 @@ candidates"), with this sample's specifics at the end.
 | Titled (optional) | 1 | The strongest banner again, with the app's display name in the app's own display font. This is the only text allowed. |
 
 - **Exports:** every banner at 1x (1200×630) and 2x (2400×1260).
-- **Heroes:** the two strongest also get a hero version at 1920×1080.
+- **Heroes:** two banners also get a hero version at 1920×1080: the two strongest, but never `stylized-split` (owner,
+  2026-11-09). If the split is one of the two strongest, give its hero to the next strongest banner.
 - **Names:** use the Cargo names where they fit (`showcase-desk`, `showcase-phones`, `showcase-daynight`, `focus-<element>`,
   `stylized-split`, `stylized-stack`, `stylized-mosaic`, `focus-<element>-titled`). Rename or replace a composition when
   the app has no material for it: a single-screen control gets more focused and stylized banners, not empty device frames.
@@ -84,7 +85,8 @@ Cargo's set is the worked example. Reuse its tooling and adapt it; don't copy it
 
 ## Deliver to `/home/user/banners/liveline/`
 
-- `finals/<name>@1x.png` and `finals/<name>@2x.png` for all 11, plus `finals/<name>-hero.png` for the two strongest.
+- `finals/<name>@1x.png` and `finals/<name>@2x.png` for all 11, plus `finals/<name>-hero.png` for the two hero banners
+  (never `stylized-split`).
 - `src/`:
   - the HTML compositions, `frames.css` and the capture tool;
   - the captures the compositions use, as PNG, at the resolution used;
@@ -110,7 +112,7 @@ Cargo's set is the worked example. Reuse its tooling and adapt it; don't copy it
 ```
 
 - `family` is one of `showcase`, `focused`, `stylized`, `titled`.
-- `pick` is true for the two strongest, and their `files` add `"hero": "finals/<name>-hero.png"`.
+- `pick` is true for the two strongest. Each banner with a hero adds `"hero": "finals/<name>-hero.png"` to its `files`.
 - The whole folder stays under about 40 MB: PNG with sensible compression, and no duplicate captures.
 
 ## Report back
