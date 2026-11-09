@@ -12,9 +12,10 @@ public static class MomentumHelper
 {
     /// <summary>
     /// Resolves the <c>Momentum</c> property value into a concrete direction.
-    /// <c>false</c> → <see cref="MomentumDirection.Off"/>;
+    /// <c>false</c>, <c>"false"</c> or <c>"off"</c> → <see cref="MomentumDirection.Off"/>;
     /// <c>"up"</c>/<c>"down"</c>/<c>"flat"</c> → forced direction;
-    /// otherwise auto-detect from delta.
+    /// <c>true</c>, <c>"true"</c> or <c>"auto"</c> → auto-detect from delta.
+    /// XAML passes <c>Momentum="True"</c> as text (the property is typed <c>object</c>), so text is read case-insensitively.
     /// </summary>
     public static MomentumDirection Resolve(object? value, double currentValue, double previousValue)
     {
@@ -23,13 +24,17 @@ public static class MomentumHelper
 
         if (value is string s)
         {
-            return s.ToLowerInvariant() switch
+            switch (s.Trim().ToLowerInvariant())
             {
-                "up" => MomentumDirection.Up,
-                "down" => MomentumDirection.Down,
-                "flat" => MomentumDirection.Flat,
-                _ => MomentumDirection.Off
-            };
+                case "up": return MomentumDirection.Up;
+                case "down": return MomentumDirection.Down;
+                case "flat": return MomentumDirection.Flat;
+                case "true":
+                case "auto":
+                    break; // auto-detect below
+                default:
+                    return MomentumDirection.Off; // "false", "off" and anything unknown
+            }
         }
 
         if (value is null)
