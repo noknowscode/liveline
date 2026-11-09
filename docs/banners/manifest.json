@@ -1,0 +1,140 @@
+{
+  "id": "liveline",
+  "displayName": "Liveline",
+  "banners": [
+    {
+      "name": "showcase-desk",
+      "family": "showcase",
+      "title": "Desk and phones",
+      "description": "The Light desktop window between a Dark landscape phone and a Dark phone, one feed at 140.33 with its live dot, on pale mint with ledger rules.",
+      "pick": false,
+      "files": {
+        "1x": "finals/showcase-desk@1x.png",
+        "2x": "finals/showcase-desk@2x.png"
+      }
+    },
+    {
+      "name": "showcase-phones",
+      "family": "showcase",
+      "title": "Four phones",
+      "description": "Light and Dark phones in portrait and landscape, the same frame of the same feed, on the Dark palette.",
+      "pick": false,
+      "files": {
+        "1x": "finals/showcase-phones@1x.png",
+        "2x": "finals/showcase-phones@2x.png"
+      }
+    },
+    {
+      "name": "showcase-daynight",
+      "family": "showcase",
+      "title": "Light and Dark tablets",
+      "description": "Two tablets turned towards each other, a pale Light one on the day ground and a graphite Dark one on the night ground.",
+      "pick": false,
+      "files": {
+        "1x": "finals/showcase-daynight@1x.png",
+        "2x": "finals/showcase-daynight@2x.png"
+      }
+    },
+    {
+      "name": "focus-badge",
+      "family": "focused",
+      "title": "The live value",
+      "description": "Macro of the chart's live end at native DPR 6: the climb to a new high, the tracking line, the live dot with its halo and the 140.33 badge.",
+      "pick": true,
+      "files": {
+        "1x": "finals/focus-badge@1x.png",
+        "2x": "finals/focus-badge@2x.png",
+        "hero": "finals/focus-badge-hero.png"
+      }
+    },
+    {
+      "name": "focus-easing",
+      "family": "focused",
+      "title": "Easing mid-move",
+      "description": "The badge already reads the spike's new value, 128.65, while it, the live dot and the line's end are still climbing; the past goes soft.",
+      "pick": false,
+      "files": {
+        "1x": "finals/focus-easing@1x.png",
+        "2x": "finals/focus-easing@2x.png"
+      }
+    },
+    {
+      "name": "focus-card",
+      "family": "focused",
+      "title": "The control",
+      "description": "The Light chart card on its own, turned slightly in space on mint.",
+      "pick": false,
+      "files": {
+        "1x": "finals/focus-card@1x.png",
+        "2x": "finals/focus-card@2x.png"
+      }
+    },
+    {
+      "name": "focus-line",
+      "family": "focused",
+      "title": "Line to the live end",
+      "description": "The line and its gradient fill running to the live dot and badge, with no card, dissolving into the plot's own Surface colour.",
+      "pick": false,
+      "files": {
+        "1x": "finals/focus-line@1x.png",
+        "2x": "finals/focus-line@2x.png"
+      }
+    },
+    {
+      "name": "stylized-split",
+      "family": "stylized",
+      "title": "Light and Dark split",
+      "description": "One chart in Light and Dark cut on a diagonal; the same frame of the same feed, so the line runs unbroken across the cut.",
+      "pick": true,
+      "files": {
+        "1x": "finals/stylized-split@1x.png",
+        "2x": "finals/stylized-split@2x.png"
+      }
+    },
+    {
+      "name": "stylized-seeds",
+      "family": "stylized",
+      "title": "Four brand seeds",
+      "description": "Four builds that differ only in the brand seed (green, blue, deep orange, purple), Light and Dark alternating, on one feed and one value.",
+      "pick": false,
+      "files": {
+        "1x": "finals/stylized-seeds@1x.png",
+        "2x": "finals/stylized-seeds@2x.png",
+        "hero": "finals/stylized-seeds-hero.png"
+      }
+    },
+    {
+      "name": "stylized-motion",
+      "family": "stylized",
+      "title": "Five moments of a spike",
+      "description": "Five frames over 928 ms: the badge takes each new value at once and glides to it while the dot and the line follow.",
+      "pick": false,
+      "files": {
+        "1x": "finals/stylized-motion@1x.png",
+        "2x": "finals/stylized-motion@2x.png"
+      }
+    },
+    {
+      "name": "focus-badge-titled",
+      "family": "titled",
+      "title": "The live value, titled",
+      "description": "focus-badge with the display name in Roboto Medium, the Material theme's face.",
+      "pick": false,
+      "files": {
+        "1x": "finals/focus-badge-titled@1x.png",
+        "2x": "finals/focus-badge-titled@2x.png"
+      }
+    }
+  ],
+  "notes": [
+    "Captured on studio 9de40e5 (the live dot draws); the coordinator's Release WebAssembly publish of 9de40e5 for the shipped seed.",
+    "Heroes: focus-badge (a pick) and stylized-seeds (the next strongest); stylized-split, the other pick, has no hero by the owner's brief change of 2026-11-09.",
+    "Captures run on a paused page clock stepped one 16 ms frame at a time, with the app's Random() fed seeded entropy (2026), so every session and build shows the same feed and value (140.33).",
+    "stylized-seeds uses three extra builds of 9de40e5 that change only PrimarySeed in App.xaml (#2196F3, #FF5722, #9C27B0); real output, built one at a time and deleted after capture.",
+    "Sessions can start one 20 ms clock step apart (about a frame of easing); frames were matched by line masks, and the Light and Dark desktops in the split agree.",
+    "focus-easing and stylized-motion show the badge text ahead of its position on purpose: the control's designed easing, not canvas lag.",
+    "Showcase banners carry axis labels of 4 to 7 px at 1x; readable text is in the focused banners.",
+    "The portrait phones and the 1180x820 tablets show the one-card page with a lot of Background: the app's real layout.",
+    "Studio info-file screenshots (Light, settled, dot visible) are in studiolive/: chart-desktop.png 1280x800 and chart-phone.png 390x844, both at deviceScaleFactor 1."
+  ]
+}

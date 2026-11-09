@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>showcase-daynight</title>
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* Two tablets, Light and Dark, the same frame of the same feed (seed 2026, frame 551, 140.33), turned towards each
+     other. The ground is the two Backgrounds, #FCFDF6 and #1A1C19, meeting behind them, each with its own Primary haze
+     (#4CAF50 / #78DC77) and OutlineVariant rules (#C2C9BD / #424940). */
+  .day, .night { position: absolute; top: 0; bottom: 0; }
+  .day { left: 0; width: 52%; background:
+      radial-gradient(60% 60% at 55% 50%, rgba(76,175,80,.13), rgba(76,175,80,0) 70%), linear-gradient(180deg, #FCFDF6, #EEF2E8); }
+  .night { right: 0; width: 48%; background:
+      radial-gradient(60% 60% at 45% 50%, rgba(120,220,119,.11), rgba(120,220,119,0) 70%), linear-gradient(180deg, #232521, #1A1C19); }
+  .day .rules { --rc: rgba(194,201,189,.55); --rs: 44px; }
+  .night .rules { --rc: rgba(66,73,64,.7); --rs: 44px; }
+  .scene { position: absolute; inset: 0; perspective: 1700px; }
+  .t1 { left: 64px; top: 122px; width: 524px; height: 373px; --bezel: 12px; --r: 26px; transform-origin: 0% 50%; transform: rotateY(7deg); }
+  .t2 { left: 612px; top: 122px; width: 524px; height: 373px; --bezel: 12px; --r: 26px; transform-origin: 100% 50%; transform: rotateY(-7deg);
+    box-shadow: inset 0 0 0 1px rgba(194,201,189,.14), inset 0 1px 0 rgba(255,255,255,.18), 0 0 0 1px rgba(0,0,0,.6),
+              0 2px 4px rgba(0,0,0,.35), 0 16px 34px -8px rgba(0,0,0,.6), 0 44px 80px -24px rgba(0,0,0,.75); }
+  /* The day tablet in a pale body (Background into OutlineVariant): a dark bezel weighs too much on the Light ground. */
+  .device.silver { background: linear-gradient(145deg, rgba(255,255,255,.7), rgba(255,255,255,0) 35%), linear-gradient(160deg, #E9ECE4 0%, #CDD3C8 55%, #DDE1D7 100%);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 0 0 1px rgba(66,73,64,.22), 0 2px 4px rgba(26,28,25,.08),
+                0 14px 30px -8px rgba(26,28,25,.22), 0 40px 70px -24px rgba(26,28,25,.32); }
+  .device.silver .screen { box-shadow: 0 0 0 1px rgba(66,73,64,.18); }
+  .floor { position: absolute; left: 6%; right: 52%; bottom: 76px; height: 50px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(26,28,25,.12), rgba(26,28,25,0)); filter: blur(8px); }
+</style></head>
+<body><div class="stage grain">
+  <div class="day"><div class="rules"></div></div>
+  <div class="night"><div class="rules"></div></div>
+  <div class="floor"></div>
+  <div class="scene">
+    <div class="device silver t1"><div class="screen"><img src="cap/light-tab@2x.png"></div></div>
+    <div class="device t2"><div class="screen"><img src="cap/dark-tab@2x.png"></div></div>
+  </div>
+</div></body></html>

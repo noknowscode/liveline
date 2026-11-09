@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>focus-easing</title>
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* The easing caught mid-move (Dark, frame 146, moments after a spike's tick): the badge already reads the new value,
+     128.65, while it, the live dot and the line's end are still climbing past 114. The plot recedes to the left and goes soft; the badge end is
+     the near edge, shown at 1.45 CSS px per app px (2.9 device px at 2x, under the capture's 3); the far side goes soft
+     and falls off into the backdrop.
+     Backdrop: Dark Background #1A1C19 lifted towards Surface #2F312D, with a Dark Primary #78DC77 haze at the badge. */
+  .stage { background:
+      radial-gradient(38% 52% at 80% 34%, rgba(120,220,119,.13) 0%, rgba(120,220,119,0) 70%),
+      radial-gradient(70% 90% at 62% 46%, #262824 0%, #1A1C19 70%); }
+  .rules { --rc: rgba(66,73,64,.55); --rs: 52px; --ry: 22px; --rm: radial-gradient(60% 70% at 30% 50%, #000 0%, rgba(0,0,0,.35) 55%, transparent 100%); }
+  .scene { position: absolute; left: 318px; top: 52px; width: 752px; height: 519px; perspective: 1500px; }
+  .plane { position: absolute; inset: 0; transform-origin: 100% 50%; transform: rotateY(-16deg) rotateX(3deg); border-radius: 22px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 34%), linear-gradient(180deg, transparent 0%, #000 6%, #000 90%, transparent 100%);
+    -webkit-mask-composite: source-in; mask-composite: intersect; }
+  .plane img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .plane .soft { filter: blur(4px); transform: scale(1.01); }
+  .plane .sharp { -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 22%, #000 58%); }
+</style></head>
+<body><div class="stage grain on-night">
+  <div class="rules"></div>
+  <div class="scene"><div class="plane">
+    <img class="soft" src="cap/dark-ease@3x.png"><img class="sharp" src="cap/dark-ease@3x.png">
+  </div></div>
+</div></body></html>

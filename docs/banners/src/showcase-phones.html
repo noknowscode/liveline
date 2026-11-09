@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>showcase-phones</title>
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* Four phones, one feed, one frame (seed 2026, frames 550-553, 140.33): a Light phone, the landscape layout in Dark and
+     Light, a Dark phone. Backdrop: a deep green-grey from the Dark palette (Background #1A1C19, Surface #2F312D) with a
+     Dark Primary #78DC77 haze behind the centre and OutlineVariant #424940 ledger rules. */
+  .stage { background:
+      radial-gradient(50% 60% at 50% 45%, rgba(120,220,119,.11) 0%, rgba(120,220,119,0) 70%),
+      linear-gradient(180deg, #2A2C28 0%, #222420 55%, #1A1C19 100%); }
+  .rules { --rc: rgba(66,73,64,.7); --rs: 44px; --rm: radial-gradient(75% 70% at 50% 45%, #000 0%, rgba(0,0,0,.4) 60%, transparent 100%); }
+  .p1 { left: 72px; top: 72px; width: 232px; height: 486px; --bezel: 9px; --r: 34px; }
+  .p4 { left: 896px; top: 72px; width: 232px; height: 486px; --bezel: 9px; --r: 34px; }
+  .l1 { left: 330px; top: 60px; width: 540px; height: 248px; --bezel: 10px; --r: 34px; }
+  .l2 { left: 330px; top: 322px; width: 540px; height: 248px; --bezel: 10px; --r: 34px; }
+</style></head>
+<body><div class="stage grain on-night">
+  <div class="rules"></div>
+  <div class="device p1"><div class="screen"><img src="cap/light-phone@2x.png"></div></div>
+  <div class="device p4"><div class="screen"><img src="cap/dark-phone@2x.png"></div></div>
+  <div class="device l1"><div class="screen"><img src="cap/dark-land@2x.png"></div></div>
+  <div class="device l2"><div class="screen"><img src="cap/light-land@2x.png"></div></div>
+</div></body></html>

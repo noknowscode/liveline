@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>focus-line</title>
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* The line and its gradient fill running to the live end (Light, seed 2026, frame 550): the plot through the live dot,
+     the badge and the value labels, cropped inside the card above the time labels, with the dashed tracking line at the
+     latest value. The plot's own Surface (#FCFDF6) is the ground here too, so its edges dissolve and only the feed's
+     shape is left. Captured at DPR 5; the near (right) edge is shown at 1.53 CSS px per app px (3.1 device px at 2x,
+     under the capture's 5).
+     Backdrop: Background/Surface #FCFDF6 into a touch of OutlineVariant #C2C9BD; no rules, so nothing marks the plot's edge. */
+  .stage { background: linear-gradient(180deg, #FCFDF6 0%, #FCFDF6 62%, #F2F5EC 100%); }
+  .scene { position: absolute; left: 66px; top: 70px; width: 1060px; height: 480px; perspective: 1600px; perspective-origin: 70% 30%; }
+  .plane { position: absolute; inset: 0; transform-origin: 100% 0%; transform: rotateY(-9deg) rotateX(10deg);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 26%), linear-gradient(180deg, #000 0%, #000 62%, transparent 100%);
+    -webkit-mask-composite: source-in; mask-composite: intersect; }
+  .plane img { width: 100%; height: 100%; }
+</style></head>
+<body><div class="stage grain">
+  <div class="scene"><div class="plane"><img src="cap/light-plot@5x.png"></div></div>
+</div></body></html>

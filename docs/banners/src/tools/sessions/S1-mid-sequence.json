@@ -1,0 +1,7 @@
+[{"boot":true},{"run":2900},{"frames":150},{"scheme":"dark"},{"frames":1},
+ {"seq":"mid","n":14,"everyFrames":4,"clip":{"x":190,"y":130,"width":740,"height":380}},
+ {"scheme":"light"},{"frames":348},
+ {"shot":"light-desk"},{"scheme":"dark"},{"frames":1},{"shot":"dark-desk"},
+ {"viewport":[390,844]},{"frames":1},{"shot":"dark-phone"},{"scheme":"light"},{"frames":1},{"shot":"light-phone"},
+ {"viewport":[915,412]},{"frames":1},{"shot":"light-land"},{"scheme":"dark"},{"frames":1},{"shot":"dark-land"},
+ {"viewport":[1180,820]},{"frames":1},{"shot":"dark-tab"},{"scheme":"light"},{"frames":1},{"shot":"light-tab"}]

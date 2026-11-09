@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>showcase-desk</title>
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* House style: the Light desktop window between a Dark landscape phone and a Dark phone; one feed, one frame
+     (seed 2026, frames 550-553, 140.33). Backdrop: Background #FCFDF6 into a deeper ground mixed with
+     OutlineVariant #C2C9BD, a Primary #4CAF50 haze behind the window and faint OutlineVariant ledger rules. */
+  .stage { background:
+      radial-gradient(55% 60% at 48% 40%, var(--mint-haze) 0%, rgba(76,175,80,0) 70%),
+      linear-gradient(180deg, #FCFDF6 0%, #F2F5EC 55%, #E6EBE1 100%); }
+  .rules { --rc: rgba(194,201,189,.55); --rs: 44px; --rm: radial-gradient(75% 70% at 50% 45%, #000 0%, rgba(0,0,0,.4) 60%, transparent 100%); }
+  .floor { position: absolute; left: 10%; right: 10%; bottom: 18px; height: 60px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(26,28,25,.14), rgba(26,28,25,0)); filter: blur(6px); }
+  .win { left: 196px; top: 40px; width: 780px; --bar: 24px; }
+  .win .view { height: 446px; overflow: hidden; }
+  .pp { left: 912px; top: 116px; width: 228px; height: 476px; --bezel: 9px; --r: 34px; }
+  .pl { left: 62px; top: 420px; width: 380px; height: 180px; --bezel: 9px; --r: 30px; }
+</style></head>
+<body><div class="stage grain">
+  <div class="rules"></div>
+  <div class="floor"></div>
+  <div class="win"><div class="bar"><i></i><i></i><i></i><b></b></div><div class="view"><img src="cap/light-desk@2x.png"></div></div>
+  <div class="device pl"><div class="screen"><img src="cap/dark-land@2x.png"></div></div>
+  <div class="device pp"><div class="screen"><img src="cap/dark-phone@2x.png"></div></div>
+</div></body></html>

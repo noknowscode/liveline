@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>stylized-split</title>
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* One chart, Light and Dark, cut on one diagonal: the page itself is the backdrop (Background #FCFDF6 / #1A1C19).
+     Both captures are the same frame of the same feed (seed 2026, frame 550, 140.33), shot in a Light and a Dark
+     session, so the line and the badge run straight across the cut. Region: the desk page from (120, 60), 880 x 520
+     app px, shown at 1.45 CSS px per app px (2.9 device px at 2x, under the capture's 3). */
+  .stage { background: var(--ground); }
+  .pg { position: absolute; left: -38px; top: -62px; width: 1276px; height: 754px; }
+  .pg img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .night { clip-path: polygon(58.9% 0, 100% 0, 100% 100%, 35.3% 100%); }
+  .cut { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to right, transparent calc(50% - 1px), rgba(255,255,255,.5) 50%, transparent calc(50% + 1px));
+    clip-path: polygon(58.9% 0, 100% 0, 100% 100%, 35.3% 100%); }
+</style></head>
+<body><div class="stage">
+  <div class="pg"><img src="cap/light-split@3x.png"><img class="night" src="cap/dark-split@3x.png"></div>
+</div></body></html>

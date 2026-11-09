@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>stylized-seeds-hero</title>
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* One control, four brand seeds: the chart takes every colour from the theme, so four builds that differ only in
+     App.xaml's PrimarySeed (#4CAF50 as shipped, then Blue #2196F3, Deep Orange #FF5722, Purple #9C27B0) draw four
+     palettes, Light and Dark alternating. Every build ran the same feed (seeded entropy) to the same value; see the
+     README for how the frames were matched. The hero (1920 x 1080, rendered at 1x) shows the cards at 1.44 CSS px per
+     app px (1.44 device px, under the stored 2x).
+     Backdrop: the shipped seed's Light Background #FCFDF6 into OutlineVariant #C2C9BD, ledger rules. */
+  .stage { background:
+      radial-gradient(60% 70% at 40% 60%, rgba(76,175,80,.10) 0%, rgba(76,175,80,0) 70%),
+      linear-gradient(160deg, #FCFDF6 0%, #EEF1E8 55%, #DCE1D6 100%); }
+  .rules { --rc: rgba(194,201,189,.6); --rs: 70px; }
+  .deck { position: absolute; inset: 0; perspective: 3500px; }
+  .deck .card { width: 1037px; height: 517px; --cr: 23px; transform-origin: 0% 100%; transform: rotateY(12deg) rotateX(6deg); }
+  /* The back cards let their time-label row go: a depth fade, so only the front card is read in full. */
+  .c2, .c3, .c4 { -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 93%); }
+  .c4 { left: 720px; top: 109px; }
+  .c3 { left: 534px; top: 224px; }
+  .c2 { left: 349px; top: 339px; }
+  .c1 { left: 163px; top: 455px; }
+</style></head>
+<body><div class="stage grain">
+  <div class="rules"></div>
+  <div class="deck">
+    <div class="card c4"><img src="cap/dark-card-purple@2x.png"></div>
+    <div class="card c3"><img src="cap/light-card-orange@2x.png"></div>
+    <div class="card c2"><img src="cap/dark-card-blue@2x.png"></div>
+    <div class="card c1"><img src="cap/light-card-green@2x.png"></div>
+  </div>
+</div></body></html>

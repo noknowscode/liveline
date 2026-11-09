@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>focus-card</title>
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* The control on its own: the Light card (seed 2026, frame 555, 140.33), cropped on its 1 px edge and re-cut to its 16 px
+     corner, turned a little in space. The near (right) edge is shown at 1.25 CSS px per app px (2.5 device px at 2x,
+     under the capture's 3). Backdrop: Background #FCFDF6 with a Primary #4CAF50 haze and OutlineVariant ledger rules. */
+  .stage { background:
+      radial-gradient(45% 60% at 60% 46%, rgba(76,175,80,.16) 0%, rgba(76,175,80,0) 70%),
+      linear-gradient(180deg, #FCFDF6 0%, #F1F4EB 60%, #E5EAE0 100%); }
+  .rules { --rc: rgba(194,201,189,.6); --rs: 44px; --rm: radial-gradient(70% 75% at 50% 50%, #000 0%, rgba(0,0,0,.4) 60%, transparent 100%); }
+  .scene { position: absolute; left: 152px; top: 92px; width: 898px; height: 448px; perspective: 1800px; }
+  .card { inset: 0; transform-origin: 100% 50%; transform: rotateY(-14deg) rotateX(6deg); --cr: 20px;
+    box-shadow: 0 0 0 1px #C2C9BD, 0 2px 4px rgba(26,28,25,.08), 0 18px 36px -10px rgba(26,28,25,.22), 0 50px 90px -30px rgba(26,28,25,.35); }
+</style></head>
+<body><div class="stage grain">
+  <div class="rules"></div>
+  <div class="scene"><div class="card"><img src="cap/light-card@3x.png"></div></div>
+</div></body></html>

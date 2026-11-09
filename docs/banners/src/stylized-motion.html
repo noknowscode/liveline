@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>stylized-motion</title>
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* Five moments of the spike, left to right: frames 146, 150, 172, 180 and 204 of one Dark session stepped frame by
+     frame, so 0, 64, 416, 544 and 928 ms apart on the page clock (the right end of the plot, the live dot, the badge and
+     the value labels). The feed ticks every 150 ms: the badge shows each new value at once (128.65, 130.07, 131.55,
+     131.13, 129.45) and glides to it; the dot and the line follow. Same axis in every frame, so the climb reads across.
+     The row turns away to the left, so the latest moment is nearest: 0.92 CSS px per app px at the near end (1.84 device
+     px at 2x, under the stored 2x), smaller behind.
+     Backdrop: Dark Background #1A1C19 into Surface #2F312D, Dark Primary #78DC77 haze, OutlineVariant #424940 rules. */
+  .stage { background:
+      radial-gradient(46% 60% at 74% 40%, rgba(120,220,119,.12) 0%, rgba(120,220,119,0) 70%),
+      linear-gradient(180deg, #1F211E 0%, #1A1C19 60%, #161815 100%); }
+  .rules { --rc: rgba(66,73,64,.6); --rs: 66px; --ry: 30px; --rm: radial-gradient(75% 70% at 50% 50%, #000 0%, rgba(0,0,0,.4) 60%, transparent 100%); }
+  .scene { position: absolute; inset: 0; perspective: 1500px; perspective-origin: 80% 45%; }
+  .row { position: absolute; left: 28px; top: 166px; display: flex; gap: 17px; transform-origin: 100% 50%; transform: rotateY(-11deg); }
+  .f { position: relative; width: 201px; height: 293px; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 0 0 1px #424940, 0 2px 4px rgba(0,0,0,.35), 0 16px 34px -10px rgba(0,0,0,.6), 0 40px 70px -26px rgba(0,0,0,.7); }
+  .f img { width: 100%; height: 100%; }
+</style></head>
+<body><div class="stage grain on-night">
+  <div class="rules"></div>
+  <div class="scene"><div class="row">
+    <div class="f"><img src="cap/dark-step01@2x.png"></div>
+    <div class="f"><img src="cap/dark-step03@2x.png"></div>
+    <div class="f"><img src="cap/dark-step14@2x.png"></div>
+    <div class="f"><img src="cap/dark-step18@2x.png"></div>
+    <div class="f"><img src="cap/dark-step30@2x.png"></div>
+  </div></div>
+</div></body></html>

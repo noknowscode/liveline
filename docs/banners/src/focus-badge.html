@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>focus-badge</title>
+<link rel="stylesheet" href="frames.css">
+<style>
+  /* Macro of the chart's live end (Dark, seed 2026, frame 550): the climb to a new high, the dashed tracking line, the live dot,
+     value labels and the badge at 140.33, with the card's own corner on the right. Captured at DPR 6 in a 600 x 420 page;
+     shown at up to 3 CSS px per app px (6 device px at 2x: native). The live dot, its halo and the badge are the subject (studio 9de40e5).
+     Backdrop: Dark Background #1A1C19 into Surface #2F312D, a Dark Primary #78DC77 haze at the badge. */
+  .stage { background:
+      radial-gradient(34% 46% at 76% 26%, rgba(120,220,119,.16) 0%, rgba(120,220,119,0) 70%),
+      radial-gradient(80% 90% at 70% 40%, #262824 0%, #1A1C19 72%); }
+  .rules { --rc: rgba(66,73,64,.55); --rs: 48px; --ry: 10px; --rm: radial-gradient(55% 70% at 22% 55%, #000 0%, rgba(0,0,0,.35) 55%, transparent 100%); }
+  .scene { position: absolute; left: 280px; top: 16px; width: 900px; height: 780px; perspective: 1600px; }
+  .plane { position: absolute; inset: 0; transform-origin: 100% 0%; transform: rotateY(-12deg) rotateX(7deg); }
+  .plane img { width: 100%; height: 100%; }
+  .plane { -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%), linear-gradient(180deg, #000 58%, transparent 92%);
+    -webkit-mask-composite: source-in; mask-composite: intersect; }
+</style></head>
+<body><div class="stage grain on-night">
+  <div class="rules"></div>
+  <div class="scene"><div class="plane"><img src="cap/dark-macro@6x.png"></div></div>
+</div></body></html>
